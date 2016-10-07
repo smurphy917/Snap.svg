@@ -116,6 +116,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
         }
         var args = arguments;
         if (Snap.is(attrs, "array") && Snap.is(args[args.length - 1], "array")) {
+            args = args[args.length - 1]; // SM - Added 10/7/2016--to handle array args. This wasn't working before (without this line at all).
             var each = true;
         }
         var begin,
