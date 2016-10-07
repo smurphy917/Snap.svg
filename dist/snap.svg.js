@@ -6900,9 +6900,9 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
         return this.forEach(function (el, i) {
             eve.once("snap.animcreated." + el.id, handler);
             if (each) {
-                args[i] && el.animate.apply(el, args[i]);
+                args[i] && Snap(el).animate.apply(Snap(el), args[i]); //SM 10/7/16 - changed to allow for passing a native element in a set.
             } else {
-                el.animate(attrs, ms, easing, callbacker);
+                Snap(el).animate(attrs, ms, easing, callbacker); //SM 10/7/16 - changed to allow for passing a native element in a set.
             }
         });
     };
